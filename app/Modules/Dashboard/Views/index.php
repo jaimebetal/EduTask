@@ -5,6 +5,9 @@
         <?php if (!empty($user['grado_grupo'])): ?>
             <p class="mb-1"><strong>Grado-Grupo:</strong> <?= htmlspecialchars($user['grado_grupo']) ?></p>
         <?php endif; ?>
+        <?php if (($user['role'] ?? '') === 'estudiante'): ?>
+            <a class="btn btn-primary mt-2" href="/estudiante">Ir al panel de estudiante</a>
+        <?php endif; ?>
         <form action="/auth/logout" method="post" class="mt-3">
             <button class="btn btn-outline-danger" type="submit">Cerrar sesión</button>
         </form>
